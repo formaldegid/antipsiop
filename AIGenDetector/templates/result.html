@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат проверки на ИИ</title>
+</head>
+<body style="text-align: center;">
+
+    <h1 style="padding-bottom: 4vh;">Результат классификации вашего текста:</h1>
+
+    {% if predictions_results %}
+
+        {% for item in predictions_results %}
+            <h2>
+                <strong>{{ item.label }}</strong>:
+                {{ (item.score * 100) | round(2) }}%
+            </h2>
+            <br>
+        {% endfor %}
+
+    <button onclick="window.location.href='http://127.0.0.1:8000/'" style="width: 15vw; height: 7vh;">
+        Проверить другой текст
+    </button>
+
+    {% else %}
+        <p>Ошибка Сервер не отвечает</p>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Классификатор сгенерированных текстов с помощью LLM</title>
+</head>
+<body style="text-align: center;">
+    <h1>Классификатор сгенерированных текстов с помощью LLM</h1>
+
+    <form id="text-submission-form" action="/process_text/" method="post">
+        <div>
+            <h2>Выберете модель для классификации</h2>
+            <input type="radio" id="base" name="classification_model" value="1" checked />
+            <label for="base">roberta-base-openai-detector</label>
+            <input type="radio" id="trained" name="classification_model" value="2" />
+            <label for="trained">xlm_roberta_ai_detector(trained)</label>
+        </div>
+        <h2>Введите текст для классификации</h2>
+            <textarea name="text_input" type="text" style="width: 35vw; height: 20vh;"></textarea>
+            <br>
+            <button type="submit" style="width: 15vw; height: 7vh;">Загрузить</button>
+    </form>
+</body>
+</html>
